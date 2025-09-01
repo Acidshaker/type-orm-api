@@ -1,0 +1,1 @@
+import { testConnection } from './src/core/config/database'; testConnection().then(() => console.log('Test completed')).catch(console.error);
