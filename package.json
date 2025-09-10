@@ -11,10 +11,16 @@
     "typeorm": "node --max-old-space-size=4096 -r tsconfig-paths/register -r ts-node/register ./node_modules/typeorm/cli.js",
     "migration:generate": "cross-env NODE_ENV=development node --max-old-space-size=4096 -r tsconfig-paths/register -r ts-node/register ./node_modules/typeorm/cli.js -d src/core/config/database.ts migration:generate",
     "migration:run": "cross-env NODE_ENV=development node --max-old-space-size=4096 -r tsconfig-paths/register -r ts-node/register ./node_modules/typeorm/cli.js -d src/core/config/database.ts migration:run",
+    "migration:run:prod": "cross-env NODE_ENV=production node --max-old-space-size=4096 -r tsconfig-paths/register -r ts-node/register ./node_modules/typeorm/cli.js -d src/core/config/database.ts migration:run",
     "migration:revert": "cross-env NODE_ENV=development node --max-old-space-size=4096 -r tsconfig-paths/register -r ts-node/register ./node_modules/typeorm/cli.js -d src/core/config/database.ts migration:revert",
     "schema:drop": "cross-env NODE_ENV=development node --max-old-space-size=4096 -r tsconfig-paths/register -r ts-node/register ./node_modules/typeorm/cli.js -d src/core/config/database.ts schema:drop",
     "db:test": "node --max-old-space-size=4096 -r tsconfig-paths/register -r ts-node/register src/core/config/database.ts --test",
     "generate-module": "node generate-module.js"
+  },
+  "_moduleAliases": {
+    "@core": "dist/core",
+    "@shared": "dist/core/shared",
+    "@modules": "dist/modules"
   },
   "keywords": [],
   "author": "devteam@paramq.com",
@@ -37,6 +43,7 @@
     "helmet": "8.1.0",
     "jsonwebtoken": "9.0.2",
     "luxon": "3.7.1",
+    "module-alias": "^2.2.3",
     "multer": "2.0.2",
     "multer-s3": "3.0.1",
     "pg": "8.16.3",
